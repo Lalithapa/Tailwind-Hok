@@ -1,0 +1,43 @@
+<div
+  class="flex items-center justify-center color-{{ section.settings.color_scheme }} border-b border-gray-200 bg-gray-100 px-4 py-2 text-gray-900"
+>
+  <a href="{{ section.settings.url }}" class="inline-block">
+    <p class="text-center font-medium">
+      {{ section.settings.text | default: 'Announcement' }}
+    </p>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Main Announcement Bar",
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
+      "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "default": "#",
+      "label": "Announcement bar link",
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar.presets.name"
+    }
+  ]
+}
+{% endschema %}
