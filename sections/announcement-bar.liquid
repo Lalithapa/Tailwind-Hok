@@ -39,8 +39,8 @@
               class="announcement-bar__link link link--text focus-inset animate-arrow"
             >
           {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span class="text-6xl underline decoration-amber-400">{{ section.blocks.first.settings.text | escape }}</span>
+          <p class="announcement-bar__message h5 ">
+            <span class="bg-amber-950 text-5xl text-start">{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%}
@@ -59,7 +59,7 @@
       >
         <div class="announcement-bar-slider slider-buttons">
           <button
-            type="button"
+            type="button" 
             class="slider-button slider-button--prev"
             name="previous"
             aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
