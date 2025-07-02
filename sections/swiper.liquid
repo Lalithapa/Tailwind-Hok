@@ -1,6 +1,6 @@
 {%- style -%}
     #shopify-section-{{ section.id }}{
-      background:linear-gradient({{ section.settings.bg_color }},{{ section.settings.bg_color_second }})
+      /* background:linear-gradient({{ section.settings.bg_color }},{{ section.settings.bg_color_second }}) */
     }
     .section-{{ section.id }}-margin {
       margin-top: {{ section.settings.margin_top_desktop }}px;
@@ -178,7 +178,7 @@
                   {% endif %}
                 </a>
   
-                {% if section.settings['show-shop-now'] %}
+                {% if section.settings['shop-now-url'] %}
                   <a
                     style="text-decoration: none; color: #000; display: flex; justify-content: baseline; align-items: center; column-gap: 6px"
                     href="{{ block.settings['banner-url'] }}"
@@ -272,8 +272,8 @@
         "id": "showContainer",
         "label": "Choose Container Style",
         "options": [
-          { "value": "full-width", "label": "Show Full Container" },
-          { "value": "page-width", "label": "Show FrameWork Container" }
+          { "value": "w-full", "label": "Show Full Container" },
+          { "value": "page-width", "label": "Show Liquid Container" }
         ],
         "default": "page-width"
       },
@@ -299,21 +299,9 @@
       },
       {
         "type": "checkbox",
-        "id": "show-shop-now",
+        "id": "shop-now-url",
         "label": "Show Shop Now Text?",
         "default": false
-      },
-      {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Add Background Color",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "bg_color_second",
-        "label": "Add Background Color",
-        "default": "#fff"
       },
       {
         "type": "checkbox",

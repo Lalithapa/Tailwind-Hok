@@ -220,6 +220,9 @@
   .table {
     display: table;
   }
+  .h-full {
+    height: 100%;
+  }
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
@@ -350,6 +353,11 @@
   .sm\:hidden {
     @media (width >= 40rem) {
       display: none;
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
     }
   }
   .md\:flex {

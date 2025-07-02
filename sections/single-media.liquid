@@ -1,0 +1,112 @@
+<section class="single-media-banner">
+    <a href="{{ section.settings.media_link }}" class="block w-full h-full">
+        {% unless section.settings.show_video %}
+            {% assign sizes = '100vw' %}
+            {% assign widths = '550, 750, 1100, 1500, 1920, 2000, 3000' %}
+            {% if section.settings.mobile_media != blank %}
+            {{
+                section.settings.desktop_media
+                | image_url: width: 3000
+                | image_tag: height: '100%', sizes: sizes, widths: widths, class: 'w-full desktop_screen'
+            }}
+            {{  
+                section.settings.mobile_media
+                | image_url: width: 550
+                | image_tag: height: '100%', sizes: sizes, widths: widths, class: 'w-full mobile_screen'
+            }}
+            {% else %}
+            {{
+                section.settings.desktop_media
+                | image_url: width: 3000
+                | image_tag: height: '100%', sizes: sizes, widths: widths, class: 'w-full'
+            }}
+            {% endif %}
+        {% else %}
+            {% assign media_desktop = section.settings.desktop_video_media %}
+            {% if section.settings.mobile_video_media != blank %}
+            {% assign media_mobile = section.settings.mobile_video_media %}
+            {{
+                media_desktop
+                | video_tag:
+                width: '100%',
+                height: '100%',
+                class: 'desktop_screen',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+            {{
+                media_mobile
+                | video_tag:
+                width: '100%',
+                height: '100%',
+                class: 'mobile_screen',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+            {% else %}
+            {{
+                media_desktop
+                | video_tag:
+                width: '100%',
+                height: '100%',
+                class: 'block',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false
+            }}
+            {% endif %}
+        {% endunless %}
+    </a>
+</section>
+
+{% schema %}
+{
+  "name": "Single Media Banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "media_link",
+      "label": "Media Link",
+      "default": "/"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_media",
+      "label": "Desktop Image Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_media",
+      "label": "Mobile Image Media",
+      "info": "Ignore this setting if you are same media for desktop and mobile."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video",
+      "label": "Show Video",
+      "default": false
+    },
+    {
+      "type": "video",
+      "id": "desktop_video_media",
+      "label": "Desktop Video Media"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video_media",
+      "label": "Mobile Video Media",
+      "info": "Ignore this setting if you are same media for desktop and mobile."
+    }
+  ],
+    "presets": [
+      {
+        "name": "Single Media Banner"
+      }
+    ]
+}
+{% endschema %}
