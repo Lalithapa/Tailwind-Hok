@@ -1,4 +1,4 @@
-<section class="single-media-banner">
+<section class="single-media-banner{% if section.settings.showContainer %} {{ section.settings.showContainer }}{% endif %}">
     <a href="{{ section.settings.media_link }}" class="block w-full h-full">
         {% unless section.settings.show_video %}
             {% assign sizes = '100vw' %}
@@ -68,6 +68,16 @@
 {
   "name": "Single Media Banner",
   "settings": [
+    {
+        "type": "radio",
+        "id": "showContainer",
+        "label": "Choose Container Style",
+        "options": [
+          { "value": "w-full", "label": "Show Full Container" },
+          { "value": "page-width", "label": "Show Liquid Container" }
+        ],
+        "default": "page-width"
+      },
     {
       "type": "url",
       "id": "media_link",

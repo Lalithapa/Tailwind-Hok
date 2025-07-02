@@ -93,7 +93,7 @@
                 class="header__active-menu-item"
               {% endif %}
             >
-              {{- link.title | escape -}}
+               {% if link.handle == "hok-rewards" %}<img src="https://cdn.shopify.com/s/files/1/0896/2320/0023/files/Hok_rewards_gif.gif" alt="hok-rewards" width="80" height="40">{% else %} {{ link.title | escape }}{% endif %}
             </span>
           </a>
         {%- endif -%}

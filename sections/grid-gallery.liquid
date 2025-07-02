@@ -1,0 +1,85 @@
+<section class="px-4 py-10 bg-white page-width">
+  <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900 uppercase">Trends You Can't Miss</h2>
+  <div class="flex flex-col lg:flex-row gap-6">
+    <div class="w-full lg:w-4/6">
+      <div class="overflow-hidden rounded-lg h-full">
+          <video 
+            class="w-full h-full object-cover" 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            poster="//hokmakeup.com/cdn/shop/files/preview_images/3585e41d52b644c3aece568ab8c8d109.thumbnail.0000000000.jpg?v=1749447785">
+            <source src="//hokmakeup.com/cdn/shop/videos/c/vp/3585e41d52b644c3aece568ab8c8d109/3585e41d52b644c3aece568ab8c8d109.HD-720p-1.6Mbps-49047504.mp4?v=0" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    </div>
+    <div class="w-full lg:w-2/6 flex flex-col md:flex-row lg:flex-col gap-6">
+      <div class="relative w-full overflow-hidden rounded-lg">
+          <img 
+            src="https://hokmakeup.com/cdn/shop/files/Artboard_1_copy_9b1567a5-a16b-47bb-90c4-62f37ef59118.png?v=1749447899" 
+            alt="Lip Gloss" 
+            class="w-full h-full object-cover">
+          <div class="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black/40 px-3 py-1 rounded">
+            Explore Lip Gloss &gt;
+          </div>
+        </div>
+        <div class="relative w-full overflow-hidden rounded-lg">
+          <img 
+            src="https://hokmakeup.com/cdn/shop/files/Artboard_1_copy_9b1567a5-a16b-47bb-90c4-62f37ef59118.png?v=1749447899" 
+            alt="Lip Gloss" 
+            class="w-full h-full object-cover">
+          <div class="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black/40 px-3 py-1 rounded">
+            Explore Lip Gloss &gt;
+          </div>
+        </div>
+    </div>
+  </div>
+</section> 
+{% schema %}
+    {
+      "name": "Grid Gallery",
+      "settings": [
+        {
+          "type": "url",
+          "id": "media_link",
+          "label": "Media Link",
+          "default": "/"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_media",
+          "label": "Desktop Image Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_media",
+          "label": "Mobile Image Media",
+          "info": "Ignore this setting if you are same media for desktop and mobile."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_video",
+          "label": "Show Video",
+          "default": false
+        },
+        {
+          "type": "video",
+          "id": "desktop_video_media",
+          "label": "Desktop Video Media"
+        },
+        {
+          "type": "video",
+          "id": "mobile_video_media",
+          "label": "Mobile Video Media",
+          "info": "Ignore this setting if you are same media for desktop and mobile."
+        }
+      ],
+        "presets": [
+          {
+            "name": "Grid Gallery"
+          }
+        ]
+    }
+    {% endschema %}
